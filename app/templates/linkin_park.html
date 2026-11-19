@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Linkin Park | Ritmos favoritos{% endblock %}
+
+{% block content %}
+  <section class="hero artist-hero">
+    <figure class="artist-banner">
+      <img src="https://cdn-images.dzcdn.net/images/artist/4886905210739af3438990897bad3a98/1000x1000-000000-80-0-0.jpg" alt="" fetchpriority="high">
+      <figcaption><a href="https://www.deezer.com/artist/92" target="_blank" rel="noopener noreferrer">Imagen de artista: Deezer ↗</a></figcaption>
+    </figure>
+    <div class="artist-heading-row">
+      <div class="artist-heading-copy">
+        <p class="eyebrow">'From Zero' a una nueva era</p>
+        <h1>Linkin <span>Park</span></h1>
+        <p class="hero-copy">
+          Rap, rock y electrónica en una trayectoria marcada por la reinvención,
+          la conexión con sus fans y una voz inconfundible.
+        </p>
+      </div>
+      <figure class="artist-logo">
+        <img src="{{ url_for('static', filename='images/linkin-park.png') }}" alt="Logotipo de Linkin Park">
+      </figure>
+    </div>
+  </section>
+
+  <section class="content-section story-section">
+    <div class="section-heading">
+      <p class="eyebrow">La historia</p>
+      <h2>Una trayectoria en constante evolución</h2>
+    </div>
+    <div class="story-card">
+      <p>
+        Formada en California en 1996 como Xero, la banda pasó por el nombre
+        Hybrid Theory antes de convertirse en Linkin Park. Su debut,
+        <em>Hybrid Theory</em> (2000), los llevó a una audiencia mundial; luego,
+        <em>Meteora</em> (2003) consolidó su mezcla de guitarras, electrónica y
+        hip-hop.
+      </p>
+      <p>
+        En los años siguientes exploraron nuevos sonidos con
+        <em>Minutes to Midnight</em>, <em>A Thousand Suns</em>,
+        <em>Living Things</em>, <em>The Hunting Party</em> y
+        <em>One More Light</em>. Tras la muerte de Chester Bennington en 2017,
+        el grupo hizo una pausa.
+      </p>
+      <p>
+        En 2024 inició una nueva etapa con Emily Armstrong y Colin Brittain,
+        presentó “The Emptiness Machine” y publicó <em>From Zero</em>, su primer
+        álbum de estudio desde 2017.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading">
+      <p class="eyebrow">Alineación</p>
+      <h2>Integrantes y roles</h2>
+      <p class="section-intro">
+        Se indica el año de salida cuando corresponde; los integrantes actuales
+        aparecen como activos.
+      </p>
+    </div>
+    <ul class="member-list">
+      {% for member in members %}
+        <li class="member-card">
+          <div class="member-info">
+            <h3>{{ member.name }}</h3>
+            <p>{{ member.role }}</p>
+          </div>
+          <p class="member-status">{{ member.departure }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="content-section songs-section">
+    <div class="section-heading">
+      <p class="eyebrow">Para escuchar</p>
+      <h2>Canciones destacadas</h2>
+      <p class="section-intro">
+        Cuatro canciones que muestran distintas etapas y sonidos de la banda.
+      </p>
+    </div>
+    <div class="song-grid">
+      {% for song in songs %}
+        <article class="song-card">
+          <iframe
+            class="spotify-player"
+            title="Reproductor de Deezer: {{ song.title }}"
+            src="https://widget.deezer.com/widget/dark/track/{{ song.deezer_id }}"
+            width="100%"
+            height="80"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+          <div class="song-details">
+            <h3>{{ song.title }}</h3>
+            <p>{{ song.album }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

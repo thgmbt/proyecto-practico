@@ -1,0 +1,62 @@
+IA utilizada: GitHub Copilot.
+
+Prompt 1: estructura de carpetas y flask
+
+quiero hacer una aplicacion en flask, por favor haz la estructura de carpetas y creala, 
+tambien instala flask e importalo por favor
+
+Prompt 2: estructura inicial y primera/segunda página
+
+Quiero hacer una aplicación web usando flask. Par el estilo del sitio completo, quiero que tenga un fondo oscuro, 
+con botones y titulos/subtitulos de color verde menta, que tenga una barra de navegación y que cada ruta tenga un 
+hoover color verde menta. Este será un sitio normal en base a mis bandas/artistas favoritos con un breve resumen de 
+qué voy a hablar en la página de index.html. En la siguiente voy a poner la primera banda la cual será Linkin Park, 
+donde incluya un breve resumen de su trayectoria hasta la actualidad, una lista desordenada con todos sus miembros, 
+con su nombre, fecha en que salieron de la banda y su rol,  y abajo, las canciones que más me gustan ordenadas con la 
+cubierta del album una al lado del otro, poniendo la cubierta y abajito el ombre y album de la canción como si fuese 
+un reproductor de música siguiendo los colores solicitados previamente
+
+Prompt 3: correccion 
+
+reemplaza las canciones seleccionadas por 
+"Two Faced", "Points of Authority", "One Step Closer"
+y "Over Each Other"
+
+Prompt 4: tercera pàgina
+
+Para la segunda banda quiero habalr de Máneskin, Haciendo la Misma escrtuctura que con linkin park e incluyendo 
+las canciones THE DRIVER (La versión de RUSH! (ARE U COMIN?), READ YOUR DIARY (del album original) y L'altra dimensione
+
+Prompt 4: 4ta página 
+
+para la tercera banda quiero poner a Red Hot Chillipeppers, haciendo la msima estructura que con las otras dos bandas 
+anteriores pero al final del resumen, pon el siguiente texto " Si bien es una banda que empecé a escuchar hace poco, 
+me está dejando buenas impresiones". En cuanto a las canciones agraga Love and Peace, Can't Stop y Parallel Universe
+
+Prompt 5: correciones style
+
+Quiero implementar un cambio en el estilo del sitio ocmpleto. Para la página en si quiero un color bien neutro, no sabria decir 
+cual, sorprendeme. Para cada boton, un color individual. Para Linkin Park Moradito, tanto para los  botones como los titulos, 
+subtitulos que tenga la pagina de Linkin Park. Para Maneskin utiliza un color azulado con las mismas especificaciones. 
+Finalmente, para CHCP usa un color rojo. Para cada pagina utiliza su color individual de la misma manera en que estaba 
+originalmente. Para cada pagina utiliza su color individual de la misma manera en que estaba originalmente. Para la pagina de inicio usa una 
+paleta monocroma (con negro, gris y blancos)
+
+'Prompt 6': arreglo color 
+
+cambia el color de linkin park a uno mas fuscia
+Para maneskin un azul mas intenso. Para RHCP un rojo algo más vivo, 
+pero no tanto.
+
+prompt 7: fall out boy
+
+Quieroañadir una nueva página sobre Fall out Boy. 
+Para esta página añade las canciones ACES, Dance Dance, Grand thef Authum, 
+the Take Over, the Breaks Over, y Hum Halelluyah, siguiendo la misma estructura 
+que con las otras bandas
+
+
+Prompt 8: imagenes
+
+Quiero hacer un cambio, Para cada banda quiero que añadas su logo,
+los cuales te proporcionare par que los agregues

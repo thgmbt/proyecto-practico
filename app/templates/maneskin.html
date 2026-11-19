@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Måneskin | Bandas favoritas{% endblock %}
+
+{% block content %}
+  <section class="hero artist-hero">
+    <figure class="artist-banner">
+      <img src="https://cdn-images.dzcdn.net/images/artist/b5ee25137476918b7660f80529981436/1000x1000-000000-80-0-0.jpg" alt="" fetchpriority="high">
+      <figcaption><a href="https://www.deezer.com/artist/13612387" target="_blank" rel="noopener noreferrer">Imagen de artista: Deezer ↗</a></figcaption>
+    </figure>
+    <div class="artist-heading-row">
+      <div class="artist-heading-copy">
+        <p class="eyebrow">Desde Roma hacia el mundo</p>
+        <h1>Måne<span>skin</span></h1>
+        <p class="hero-copy">
+          Rock italiano con energía glam: una banda que pasó de tocar en las calles
+          de Roma a conquistar escenarios internacionales.
+        </p>
+      </div>
+      <figure class="artist-logo">
+        <img src="{{ url_for('static', filename='images/maneskin.png') }}" alt="Logotipo de Måneskin">
+      </figure>
+    </div>
+  </section>
+
+  <section class="content-section story-section">
+    <div class="section-heading">
+      <p class="eyebrow">La historia</p>
+      <h2>Una banda italiana con proyección global</h2>
+    </div>
+    <div class="story-card">
+      <p>
+        Måneskin se formó en Roma en 2016. El grupo llamó la atención en Italia
+        tras participar en <em>X Factor</em> en 2017 y publicó su primer álbum,
+        <em>Il ballo della vita</em>, en 2018.
+      </p>
+      <p>
+        En 2021 ganó el Festival de Eurovisión con “Zitti e buoni”, después de
+        triunfar en el Festival de Sanremo. Ese mismo año lanzó
+        <em>Teatro d'ira: Vol. I</em>, llevando su sonido a una audiencia
+        internacional.
+      </p>
+      <p>
+        Su tercer álbum, <em>RUSH!</em>, salió en 2023; más tarde ese año
+        publicaron la edición ampliada <em>RUSH! (ARE U COMING?)</em>, que
+        incorpora canciones como “THE DRIVER”. La banda está integrada por su
+        cuarteto fundador: Damiano David, Victoria De Angelis, Thomas Raggi y
+        Ethan Torchio.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading">
+      <p class="eyebrow">Alineación</p>
+      <h2>Integrantes y roles</h2>
+      <p class="section-intro">
+        El cuarteto fundador continúa junto; no se registran salidas de sus
+        integrantes.
+      </p>
+    </div>
+    <ul class="member-list">
+      {% for member in members %}
+        <li class="member-card">
+          <div class="member-info">
+            <h3>{{ member.name }}</h3>
+            <p>{{ member.role }}</p>
+          </div>
+          <p class="member-status">{{ member.departure }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="content-section songs-section">
+    <div class="section-heading">
+      <p class="eyebrow">Para escuchar</p>
+      <h2>Canciones destacadas</h2>
+      <p class="section-intro">
+        Cuatro canciones de distintas etapas de la discografía de Måneskin.
+      </p>
+    </div>
+    <div class="song-grid">
+      {% for song in songs %}
+        <article class="song-card">
+          <iframe
+            class="spotify-player"
+            title="Reproductor de Deezer: {{ song.title }}"
+            src="https://widget.deezer.com/widget/dark/track/{{ song.deezer_id }}"
+            width="100%"
+            height="80"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+          <div class="song-details">
+            <h3>{{ song.title }}</h3>
+            <p>{{ song.album }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

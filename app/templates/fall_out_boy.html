@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Fall Out Boy | Bandas favoritas{% endblock %}
+
+{% block content %}
+  <section class="hero artist-hero">
+    <figure class="artist-banner">
+      <img src="https://cdn-images.dzcdn.net/images/artist/981d802fcf018a2ca52bddcb1d4a739a/1000x1000-000000-80-0-0.jpg" alt="" fetchpriority="high">
+      <figcaption><a href="https://www.deezer.com/artist/404" target="_blank" rel="noopener noreferrer">Imagen de artista: Deezer ↗</a></figcaption>
+    </figure>
+    <div class="artist-heading-row">
+      <div class="artist-heading-copy">
+        <p class="eyebrow">Pop punk con sello propio</p>
+        <h1>Fall Out <span>Boy</span></h1>
+        <p class="hero-copy">
+          Una banda de Chicago que mezcló pop punk, rock alternativo y letras
+          personales para construir una carrera llena de reinvenciones.
+        </p>
+      </div>
+      <figure class="artist-logo">
+        <img src="{{ url_for('static', filename='images/fall-out-boy.png') }}" alt="Logotipo de Fall Out Boy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="content-section story-section">
+    <div class="section-heading">
+      <p class="eyebrow">La historia</p>
+      <h2>De Chicago a los grandes escenarios</h2>
+    </div>
+    <div class="story-card">
+      <p>
+        Fall Out Boy se formó en el área de Chicago en 2001. Tras sus primeros
+        lanzamientos independientes, publicó <em>Take This to Your Grave</em>
+        en 2003, un álbum que ayudó a consolidar su lugar en la escena pop punk.
+      </p>
+      <p>
+        El éxito internacional llegó con <em>From Under the Cork Tree</em>
+        (2005), seguido por <em>Infinity on High</em> (2007), donde la banda
+        amplió su sonido sin dejar atrás sus raíces melódicas.
+      </p>
+      <p>
+        Después de una pausa, regresó en 2013 con <em>Save Rock and Roll</em>.
+        Desde entonces ha seguido publicando música y girando; su álbum de
+        estudio más reciente es <em>So Much (for) Stardust</em>, lanzado en
+        2023.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading">
+      <p class="eyebrow">Alineación</p>
+      <h2>Integrantes y roles</h2>
+      <p class="section-intro">
+        La banda está formada por su cuarteto habitual.
+      </p>
+    </div>
+    <ul class="member-list">
+      {% for member in members %}
+        <li class="member-card">
+          <div class="member-info">
+            <h3>{{ member.name }}</h3>
+            <p>{{ member.role }}</p>
+          </div>
+          <p class="member-status">{{ member.departure }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="content-section songs-section">
+    <div class="section-heading">
+      <p class="eyebrow">Para escuchar</p>
+      <h2>Canciones destacadas</h2>
+      <p class="section-intro">
+        Cuatro canciones de distintas etapas de Fall Out Boy.
+      </p>
+    </div>
+    <div class="song-grid">
+      {% for song in songs %}
+        <article class="song-card">
+          <iframe
+            class="spotify-player"
+            title="Reproductor de Deezer: {{ song.title }}"
+            src="https://widget.deezer.com/widget/dark/track/{{ song.deezer_id }}"
+            width="100%"
+            height="80"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+          <div class="song-details">
+            <h3>{{ song.title }}</h3>
+            <p>{{ song.album }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

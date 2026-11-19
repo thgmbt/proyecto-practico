@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Red Hot Chili Peppers | Bandas favoritas{% endblock %}
+
+{% block content %}
+  <section class="hero artist-hero">
+    <figure class="artist-banner">
+      <img src="https://cdn-images.dzcdn.net/images/artist/238f5524a401dfdd5cac685f0f7989bd/1000x1000-000000-80-0-0.jpg" alt="" fetchpriority="high">
+      <figcaption><a href="https://www.deezer.com/artist/182" target="_blank" rel="noopener noreferrer">Imagen de artista: Deezer ↗</a></figcaption>
+    </figure>
+    <div class="artist-heading-row">
+      <div class="artist-heading-copy">
+        <p class="eyebrow">Funk rock de California</p>
+        <h1>Red Hot Chili <span>Peppers</span></h1>
+        <p class="hero-copy">
+          Una banda que combina funk, punk y rock alternativo, con una trayectoria
+          de décadas y varias etapas en su formación.
+        </p>
+      </div>
+      <figure class="artist-logo">
+        <img src="{{ url_for('static', filename='images/red-hot-chili-peppers.png') }}" alt="Logotipo de Red Hot Chili Peppers">
+      </figure>
+    </div>
+  </section>
+
+  <section class="content-section story-section">
+    <div class="section-heading">
+      <p class="eyebrow">La historia</p>
+      <h2>De Los Ángeles a los escenarios del mundo</h2>
+    </div>
+    <div class="story-card">
+      <p>
+        Red Hot Chili Peppers se formó en Los Ángeles en 1982. Su mezcla de
+        funk, punk y rock fue tomando forma en sus primeros discos, y
+        <em>Mother's Milk</em> (1989) amplió su audiencia.
+      </p>
+      <p>
+        Con <em>Blood Sugar Sex Magik</em> (1991) alcanzaron un gran éxito
+        internacional. Después de varios cambios en la guitarra, John
+        Frusciante regresó en 1998 y participó en álbumes muy populares como
+        <em>Californication</em> (1999), <em>By the Way</em> (2002) y
+        <em>Stadium Arcadium</em> (2006).
+      </p>
+      <p>
+        Josh Klinghoffer se incorporó en 2009 y tocó en
+        <em>I'm with You</em> y <em>The Getaway</em>. John Frusciante volvió al
+        grupo en 2019; con esa formación publicaron <em>Unlimited Love</em> y
+        <em>Return of the Dream Canteen</em> en 2022.
+      </p>
+      <p>
+        Si bien es una banda que empecé a escuchar hace poco, me está dejando
+        buenas impresiones
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading">
+      <p class="eyebrow">Alineación</p>
+      <h2>Integrantes y roles</h2>
+      <p class="section-intro">
+        Se incluyen los integrantes actuales y los anteriores que formaron
+        parte de las distintas etapas de la banda.
+      </p>
+    </div>
+    <ul class="member-list">
+      {% for member in members %}
+        <li class="member-card">
+          <div class="member-info">
+            <h3>{{ member.name }}</h3>
+            <p>{{ member.role }}</p>
+          </div>
+          <p class="member-status">{{ member.departure }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="content-section songs-section">
+    <div class="section-heading">
+      <p class="eyebrow">Para escuchar</p>
+      <h2>Canciones destacadas</h2>
+      <p class="section-intro">
+        Una selección de canciones de distintos álbumes de la banda.
+      </p>
+    </div>
+    <div class="song-grid">
+      {% for song in songs %}
+        <article class="song-card">
+          <iframe
+            class="spotify-player"
+            title="Reproductor de Deezer: {{ song.title }}"
+            src="https://widget.deezer.com/widget/dark/track/{{ song.deezer_id }}"
+            width="100%"
+            height="80"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+          <div class="song-details">
+            <h3>{{ song.title }}</h3>
+            <p>{{ song.album }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

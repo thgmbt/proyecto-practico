@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio | Ritmos favoritos{% endblock %}
+
+{% block content %}
+  <section class="hero home-hero">
+    <div class="home-hero-copy">
+      <p class="eyebrow">Música que deja huella</p>
+      <h1>Mis bandas y artistas <span>favoritos</span></h1>
+      <p class="hero-copy">
+        Un recorrido por la trayectoria de las bandas que me inspiran: sus
+        integrantes, sus cambios a lo largo del tiempo y las canciones que hacen
+        especial cada etapa.
+      </p>
+      <a class="button-link" href="{{ url_for('linkin_park') }}">
+        Explorar las bandas <span aria-hidden="true">→</span>
+      </a>
+    </div>
+    <figure class="home-logo">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo de Ritmos favoritos">
+    </figure>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading">
+      <p class="eyebrow">Primera parada</p>
+      <h2>Una banda, muchas etapas</h2>
+    </div>
+    <a class="feature-card" href="{{ url_for('linkin_park') }}">
+      <div>
+        <p class="card-kicker">Desde Hybrid Theory hasta From Zero</p>
+        <h3>Linkin Park</h3>
+        <p>
+          Una mirada a su evolución, sus integrantes y una selección inicial de
+          canciones para escuchar.
+        </p>
+      </div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="feature-card" href="{{ url_for('maneskin') }}">
+      <div>
+        <p class="card-kicker">De Roma al escenario internacional</p>
+        <h3>Måneskin</h3>
+        <p>
+          Su recorrido desde sus comienzos, los cuatro integrantes y algunas
+          canciones de sus álbumes más conocidos.
+        </p>
+      </div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="feature-card" href="{{ url_for('red_hot_chili_peppers') }}">
+      <div>
+        <p class="card-kicker">Funk rock desde California</p>
+        <h3>Red Hot Chili Peppers</h3>
+        <p>
+          Una banda de larga trayectoria, sus integrantes y canciones de
+          distintas etapas de su discografía.
+        </p>
+      </div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="feature-card" href="{{ url_for('fall_out_boy') }}">
+      <div>
+        <p class="card-kicker">Pop punk de Chicago</p>
+        <h3>Fall Out Boy</h3>
+        <p>
+          Su trayectoria, sus integrantes y una selección de canciones de
+          distintas épocas de la banda.
+        </p>
+      </div>
+      <span class="card-arrow" aria-hidden="true">↗</span>
+    </a>
+  </section>
+{% endblock %}

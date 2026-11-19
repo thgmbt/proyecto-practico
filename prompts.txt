@@ -60,3 +60,11 @@ Prompt 8: imagenes
 
 Quiero hacer un cambio, Para cada banda quiero que añadas su logo,
 los cuales te proporcionare par que los agregues
+
+
+Prompt 9: logo
+
+
+Como retoque. Para el icono et la pagina de inicio añade la imagen 
+logo.png que esta en app/images/logo.png. Para la página de cada 
+banda utilizza su logo correspondiente. Por favor

@@ -10,7 +10,7 @@
   </head>
   <body data-theme="{{ request.endpoint }}">
     <header class="site-header">
-      <a class="brand" href="{{ url_for('home') }}">Bandas<span>+</span></a>
+      <a class="brand" href="{{ url_for('home') }}">Miusic<span>+</span></a>
       <nav class="site-nav" aria-label="Navegación principal">
         <a class="nav-home" href="{{ url_for('home') }}" {% if request.endpoint == 'home' %}aria-current="page"{% endif %}>Inicio</a>
         <a class="nav-linkin-park" href="{{ url_for('linkin_park') }}" {% if request.endpoint == 'linkin_park' %}aria-current="page"{% endif %}>Linkin Park</a>
@@ -25,7 +25,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>Un espacio para descubrir las historias detrás de la música.</p>
+      <p>Un espacio para descubrir las historias detrás de la música. | creada por Cristhian Urdaneta-</p>
     </footer>
   </body>
 </html>
